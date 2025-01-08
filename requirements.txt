@@ -1,3 +1,4 @@
 mistralai
 streamlit
-selenium
+seleniumbase
+webdriver-manager
