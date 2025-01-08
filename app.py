@@ -1,6 +1,7 @@
 import streamlit as st
 import json
-from amdcommunity import AmdCommunity  # Import your AmdCommunity class
+from amdcommunity import AmdCommunity
+ # Import your AmdCommunity class
 
 # Initialize the AmdCommunity class
 amd_community = AmdCommunity()
