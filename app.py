@@ -1,17 +1,26 @@
 import streamlit as st
-from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium import webdriver
+import json
+import AmdCommunity  # Import your AmdCommunity class
 
+# Initialize the AmdCommunity class
+amd_community = AmdCommunity()
 
-options = webdriver.ChromeOptions()
-options.add_argument('--no-sandbox')
-options.add_argument('--headless')
-options.add_argument('--disable-gpu')
-options.add_argument('--diable-dve-shm-uage')
-driver = webdriver.Chrome(options=options)
+# Streamlit app
+st.title("Testing")
 
-driver.get("https://community.amd.com/t5/pc-processors/cpu-overheating-mystery/td-p/679185")
-st.code(driver.page_source)
+# Text input for URL
+url = st.text_input("Enter the AMD Community URL:", "")
+
+# Process the URL and display the result
+if st.button("Get Data"):
+    if url.strip():
+        try:
+            # Retrieve and process the data
+            result = amd_community.get_and_process_data([url])
+            
+            # Display the JSON result
+            st.code(json.dumps(result, indent=4), language="json")
+        except Exception as e:
+            st.error(f"Error processing the URL: {e}")
+    else:
+        st.warning("Please enter a valid URL.")
