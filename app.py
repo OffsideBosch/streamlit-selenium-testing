@@ -18,7 +18,7 @@ st.title("Testing")
 url = st.text_input("Enter the AMD Community URL:", "")
 # Process the URL and display the result
 if st.button("Get Data"):
-    if(os.path.exists("temp.json"):
+    if(os.path.exists("temp.json")):
      print("false path")
     if url.strip():
         try:
@@ -27,7 +27,7 @@ if st.button("Get Data"):
             with open("temp.json","w") as f:
              json.dump(result,f,indent=3)
             f.close()
-            if(os.path.exists("temp.json"):
+            if(os.path.exists("temp.json")):
              print("true path exists")
             
             # Display the JSON result
