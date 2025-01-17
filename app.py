@@ -28,7 +28,7 @@ if st.button("Get Data"):
              json.dump(result,f,indent=3)
             f.close()
             if(os.path.exists("temp.json"):
-             print("true path exists)
+             print("true path exists")
             
             # Display the JSON result
             st.code(json.dumps(result, indent=4), language="json")
