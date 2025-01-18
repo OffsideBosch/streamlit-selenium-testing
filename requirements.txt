@@ -2,3 +2,4 @@ mistralai
 streamlit
 seleniumbase
 webdriver-manager
+tempfile
