@@ -44,7 +44,7 @@ def main():
                 
                 # Read and display the saved file
                 try:
-                    with open(temp_file_path, "r") as f:
+                    with open("./amdcommunity/0.json", "r") as f:
                         temp_data = json.load(f)
                     st.code(json.dumps(temp_data, indent=4), language="json")
                 except Exception as read_error:
