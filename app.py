@@ -38,7 +38,7 @@ def main():
                 st.json(result)
                 
                 # Save to file
-                temp_file_path = "./temp.json"
+                temp_file_path = "/temp.json"
                 write_json_to_temp_file(result, temp_file_path)
                 st.success("File successfully saved")
                 
